@@ -1,0 +1,23 @@
+﻿@model CustomUser
+@{
+    ViewData["Title"] = "Update";
+}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6">
+            <form asp-area="admin" asp-controller="User" asp-action="update" method="post">
+                <div asp-validation-summary="All"></div>
+                <div class="mb-3">
+                    <label asp-for="@Model.Name" class="form-label">Title</label>
+                    <input class="form-control" asp-for="@Model.Name">
+                    <span asp-validation-for="@Model.Name" color="red"> </span>
+                </div>
+                <button type="submit" class="btn btn-primary">Update</button>
+                <input asp-for="@Model.Id" hidden />
+            </form>
+        </div>
+    </div>
+</div>
+

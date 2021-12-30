@@ -1,0 +1,39 @@
+﻿@model Service
+@{
+    ViewData["Title"] = "Create";
+}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6">
+            <form asp-area="admin" asp-controller="Service" asp-action="create" method="post" enctype="multipart/form-data">
+                <div asp-validation-summary="All"></div>
+                <div class="mb-3">
+                    <label asp-for="@Model.BannerText" class="form-label">Banner Text</label>
+                    <input class="form-control" asp-for="@Model.BannerText">
+                    <span asp-validation-for="@Model.BannerText" color="text-danger"> </span>
+
+                    <label asp-for="@Model.Title" class="form-label">Title</label>
+                    <input class="form-control" asp-for="@Model.Title">
+                    <span asp-validation-for="@Model.Title" color="text-danger"> </span>
+
+                    <label asp-for="@Model.CategoryId" class="form-label">Category Name</label>
+                    <input class="form-control" asp-for="@Model.CategoryId">
+                    <span asp-validation-for="@Model.CategoryId" color="text-danger"> </span>
+
+                    @*<label asp-for="@Model.UserId" class="form-label">User Name</label>
+                    <input class="form-control" asp-for="@Model.UserId">
+                    <span asp-validation-for="@Model.UserId" color="text-danger"> </span>*@
+
+
+                    @*<label asp-for="@Model.DesingType.ImageFile" class="form-label">Desing Type </label>
+                    <input class="form-control" asp-for="@Model.DesingType.ImageFile">
+                    <span asp-validation-for="@Model.DesingType.ImageFile" color="text-danger"> </span>*@
+                </div>
+                <button type="submit" class="btn btn-primary">Create</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
