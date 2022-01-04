@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Hosting;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using StraxTemplate.Data;
@@ -12,6 +13,7 @@ using System.Threading.Tasks;
 namespace StraxTemplate.Areas.admin.Controllers
 {
     [Area("admin")]
+    [Authorize]
     public class ServiceController : Controller
     {
         private readonly AppDbContext _context;

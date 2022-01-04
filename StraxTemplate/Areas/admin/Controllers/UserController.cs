@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using StraxTemplate.Data;
 using StraxTemplate.Models;
 using System;
@@ -9,6 +10,7 @@ using System.Threading.Tasks;
 namespace StraxTemplate.Areas.admin.Controllers
 {
     [Area("admin")]
+    [Authorize(Roles ="Admin")]
     public class UserController : Controller
     {
         private readonly AppDbContext _context;

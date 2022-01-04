@@ -1,0 +1,27 @@
+﻿@model IdentityRole
+@{
+    ViewData["Title"] = "RoleUpdate";
+    Layout = "~/Areas/admin/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6">
+            <form asp-area="admin" asp-controller="account" asp-action="roleupdate" method="post">
+                <div asp-validation-summary="All"></div>
+                <div class="mb-3">
+                    <label asp-for="@Model.Name" class="form-label">Name</label>
+                    <input class="form-control" asp-for="@Model.Name">
+                    <span asp-validation-for="@Model.Name" color="text-danger"> </span>
+                    <input asp-for="@Model.Id" hidden />
+                    <input asp-for="@Model.NormalizedName" hidden />
+                    <input asp-for="@Model.ConcurrencyStamp" hidden />
+                </div>
+                <button type="submit" class="btn btn-primary">Update</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+

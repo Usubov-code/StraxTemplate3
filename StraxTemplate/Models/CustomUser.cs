@@ -17,6 +17,9 @@ namespace StraxTemplate.Models
         public string Surname { get; set; }
         [MaxLength(500)]
         public string Adress { get; set; }
+        [NotMapped,Required]
+        public string RoleId { get; set; }
+
         public DateTime CreatedDate { get; set; }
 
 

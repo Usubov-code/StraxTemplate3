@@ -1,0 +1,65 @@
+﻿@model CustomUser
+@{
+    ViewData["Title"] = "UsersUpdate";
+    Layout = "~/Areas/admin/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6">
+            <form asp-area="admin" asp-controller="account" asp-action="usersupdate" method="post">
+                <div asp-validation-summary="All"></div>
+                <div class="mb-3">
+                    <label asp-for="@Model.Name" class="form-label">Name</label>
+                    <input class="form-control" asp-for="@Model.Name">
+                    <span asp-validation-for="@Model.Name" color="text-danger"> </span>
+
+                </div>
+                <div class="mb-3">
+                    <label asp-for="@Model.Surname" class="form-label">Surname</label>
+                    <input class="form-control" asp-for="@Model.Surname">
+                    <span asp-validation-for="@Model.Surname" color="text-danger"> </span>
+
+                </div>
+                <div class="mb-3">
+                    <label asp-for="@Model.Email" class="form-label">Email</label>
+                    <input class="form-control" asp-for="@Model.Email">
+                    <span asp-validation-for="@Model.Email" color="text-danger"> </span>
+
+                </div>
+                <div class="mb-3">
+                    <label asp-for="@Model.UserName" class="form-label">UserName</label>
+                    <input class="form-control" asp-for="@Model.UserName">
+                    <span asp-validation-for="@Model.UserName" color="text-danger"> </span>
+
+                </div>
+                <div class="mb-3">
+                    <label asp-for="@Model.PhoneNumber" class="form-label">PhoneNumber</label>
+                    <input class="form-control" asp-for="@Model.PhoneNumber">
+                    <span asp-validation-for="@Model.PhoneNumber" color="text-danger"> </span>
+
+                </div>
+                <div class="mb-3">
+                    <label asp-for="@Model.Adress" class="form-label">Adress</label>
+                    <input class="form-control" asp-for="@Model.Adress">
+                    <span asp-validation-for="@Model.Adress" color="text-danger"> </span>
+
+                </div>
+                <div class="mb-3">
+                    <label asp-for="@Model.RoleId" class="form-label">Role</label>
+                    <select class="form-control" asp-for="@Model.RoleId" asp-items="@(new SelectList(ViewBag.Roles,"Id","Name"))">
+                       <option selected disabled>Select role</option>
+                    </select>
+                    <span asp-validation-for="@Model.RoleId" color="text-danger"> </span>
+
+                </div>
+               <input  asp-for="@Model.Id" hidden/>
+                <button type="submit" class="btn btn-primary">Update</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
